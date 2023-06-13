@@ -13,6 +13,7 @@ class Square:
         self.position = position
 
     def area(self):
+        """area size"""
         return self.__size ** 2
 
     def my_print(self):
