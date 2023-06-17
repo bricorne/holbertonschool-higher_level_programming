@@ -1,17 +1,22 @@
 #!/usr/bin/python3
+""" print a text """
+
+
 def text_indentation(text):
-    if not isinstance(text, str):
+    """ print a text """
+    caractere = [".", "?", ":"]
+    if type(text) is not str:
         raise TypeError("text must be a string")
-    punctuation_marks = ['.', '?', ':']
-    lines = text.splitlines()
-
-    for line in lines:
-        line = line.strip()
-        if not line:
-            continue
-
-        for char in line:
-            print(char, end='')
-            if char in punctuation_marks:
-                print('\n\n', end='')
-        print()
+    x = 0
+    for i in text:
+        if x == 0:
+            if i == ' ':
+                continue
+            else:
+                x = 1
+        if x == 1:
+            if i in ".?:":
+                print(i + '\n')
+                x = 0
+            else:
+                print(i, end='')
