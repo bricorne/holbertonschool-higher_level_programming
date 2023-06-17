@@ -1,4 +1,7 @@
 #!/usr/bin/python3
+"""add integers"""
+
+
 def add_integer(a, b=98):
     """add int"""
     if type(a) is not int and type(a) is not float:
