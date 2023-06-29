@@ -88,6 +88,7 @@ class Rectangle(Base):
             print(' ' * self.__x + '#' * self.__width)
     
     def update(self, *args, **kwargs):
+        """update the rectangle"""
         if len(args) > 0:
             attributes = ['id', 'width', 'height', 'x', 'y']
             for i, arg in enumerate(args):
