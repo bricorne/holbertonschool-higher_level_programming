@@ -87,15 +87,13 @@ class Rectangle(Base):
         for i in range(self.__height):
             print(' ' * self.__x + '#' * self.__width)
     
-    def update(self, *args):
-        """update the rectangle"""
-        if len(args) >= 1:
-            self.id = args[0]
-        if len(args) >= 2:
-            self.width = args[1]
-        if len(args) >= 3:
-            self.height = args[2]
-        if len(args) >= 4:
-            self.x = args[3]
-        if len(args) >= 5:
-            self.y = args[4]
+    def update(self, *args, **kwargs):
+        if len(args) > 0:
+            attributes = ['id', 'width', 'height', 'x', 'y']
+            for i, arg in enumerate(args):
+                if i < len(attributes):
+                    setattr(self, attributes[i], arg)
+
+        elif kwargs is not None:
+            for key, value in kwargs.items():
+                setattr(self, key, value)
