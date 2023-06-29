@@ -73,8 +73,9 @@ class Rectangle(Base):
         return self.__width * self.__height
     
     def __str__(self):
-        return f"[Rectangle] ({self.id}) {self.__x}/{self.__y} - {self.__width}/{self.__height}"
-    
+        return "[Rectangle] ({}) {}/{} - {}/{}".format(
+            self.id, self.x, self.y, self.width, self.height
+        )
     def display(self):
         """print the rectangle"""
         for y in range(self.__y):
@@ -98,9 +99,9 @@ class Rectangle(Base):
         """return dictionary"""
         return {
         'id': self.id,
-        'x': self._Rectangle__x,
-        'y': self._Rectangle__y,
-        'width': self._Rectangle__width,
-        'height': self._Rectangle__height
+        'x': self.x,
+        'y': self.y,
+        'width': self.width,
+        'height': self.height
         }
         
