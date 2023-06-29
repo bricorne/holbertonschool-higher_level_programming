@@ -1,7 +1,6 @@
 #!/usr/bin/python3
 """create class Base"""
 import json
-from json import dumps, loads
 
 class Base:
     """class base"""
@@ -15,7 +14,7 @@ class Base:
 
     def to_json_string(list_dictionaries):
         """returns the JSON string"""
-        if list_dictionaries is None or len(list_dictionaries) == 0:
+        if list_dictionaries is None:
             return "[]"
         else :
             return json.dumps(list_dictionaries)
