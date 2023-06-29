@@ -72,11 +72,6 @@ class Rectangle(Base):
         """area of rectangle"""
         return self.__width * self.__height
     
-    def display(self):
-        """print the rectangle"""
-        for i in range(self.__height):
-            print('#' * self.__width)
-    
     def __str__(self):
         return f"[Rectangle] ({self.id}) {self.__x}/{self.__y} - {self.__width}/{self.__height}"
     
@@ -98,3 +93,8 @@ class Rectangle(Base):
         elif kwargs is not None:
             for key, value in kwargs.items():
                 setattr(self, key, value)
+
+    def to_dictionary(self):
+        """return dictionary"""
+        return self.__dict__
+        
