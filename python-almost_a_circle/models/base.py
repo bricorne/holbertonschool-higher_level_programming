@@ -31,3 +31,10 @@ class Base:
         
         with open(filename, 'w') as file:
             file.write(json_string)
+    
+    @staticmethod
+    def from_json_string(json_string):
+        """returns the list of the JSON string"""
+        if json_string is None:
+            return []
+        return json.loads(json_string)
