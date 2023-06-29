@@ -28,3 +28,15 @@ class Square(Rectangle):
             print()
         for i in range(self.size):
             print(' ' * self.x + '#' * self.size)
+
+    def update(self, *args, **kwargs):
+        """update the square"""
+        if len(args) > 0:
+            attributes = ['id', 'size', 'x', 'y']
+            for i, arg in enumerate(args):
+                if i < len(attributes):
+                    setattr(self, attributes[i], arg)
+
+        elif kwargs is not None:
+            for key, value in kwargs.items():
+                setattr(self, key, value)
