@@ -8,11 +8,12 @@ def list_states(username, password, database):
     db = MySQLdb.connect(host='localhost', port=3306, user=username, passwd=password, db=database)
     cursor = db.cursor()
 
-    cursor.execute("SELECT * FROM states WHERE name like 'N%' ORDER BY id ASC")
+    cursor.execute("SELECT * FROM states ORDER BY id ASC")
     states = cursor.fetchall()
 
     for state in states:
-        print(state)
+    	if state[1][0] == 'N':
+        	print(state)
 
     db.close()
 
